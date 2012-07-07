@@ -12,7 +12,7 @@ var UndoManager = (function () {
       o = {};
     }
     if (!(this instanceof library)) {
-      /* ensuring instanciation */
+      /* ensuring instantiation */
       var instance = new library(o);
       return instance;
     }
@@ -44,7 +44,7 @@ var UndoManager = (function () {
       return t=='r' ? this.redoarray : this.undoarray;
     },
 
-    /* consumer calls save when he expects to save snapshots */
+    /* consumer calls save when it expects to save snapshots */
     save: function (t) {
       var array = this.get_array(t);
       var data = this.o.read_func();
@@ -62,7 +62,7 @@ var UndoManager = (function () {
       }
     },
 
-    /* undo/reado methods. called from consumer */
+    /* undo/redo methods. called from consumer */
     undo: function () {
       var array = this.get_array();
       if (array.length) {
